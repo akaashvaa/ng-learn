@@ -1,0 +1,11 @@
+<div class="w-full flex justify-center items-center flex-col gap-8 ">
+
+
+<h1 >Akash is here {{title}}</h1>
+<app-header></app-header>
+
+<input (input)="handleInput(name.value)" class="outline-none p-3 border-2 rounded-sm" type="text" name="name" #name  placeholder="enter ytour name">
+<h2 class="bg-green-500 p-5">Learning angular</h2>
+</div>
+
+<router-outlet />
