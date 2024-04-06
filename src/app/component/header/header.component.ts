@@ -5,11 +5,15 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
-    <h1>
-      header works!
+    <h1 classname="text-[3rem] bg-green ">
+      It a Standalone component. header works!
     </h1>
   `,
-  styles: ``
+  styles: `
+   h1 {
+  color : blue ;
+}
+`
 })
 export class HeaderComponent {
 
