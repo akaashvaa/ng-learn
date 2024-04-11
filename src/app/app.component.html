@@ -4,7 +4,10 @@
 <h1 >Akash is here {{title}}</h1>
 <app-header></app-header>
 
-<input (input)="handleInput(name.value)" class="outline-none p-3 border-2 rounded-sm" type="text" name="name" #name  placeholder="enter ytour name">
-<h2 class="absolute bottom-5 bg-[#1a1a1a] mx-3 text-white dropbox-md select-none p-5 text-center w-[70%] rounded-md">Learning angular</h2>
+ <!-- <input (input)="handleInput(name.value)" class="outline-none p-3 border-2 rounded-sm" type="text" name="name" #name  placeholder="enter ytour name">
+  -->
+  <input class="outline-none p-3 border-2 rounded-sm" type="text" [(ngModel)]="twoway" name="ngmodel" value="ngmodel">
+  <h2 class="absolute bottom-5 bg-[#1a1a1a] mx-3 text-white dropbox-md select-none p-5 text-center w-[70%] rounded-md">Learning angular</h2>
+  <h1>this is by ngmodel : <span>{{twoway}}</span></h1>
 
 <router-outlet />
