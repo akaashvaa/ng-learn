@@ -10,9 +10,14 @@ import {FormsModule} from '@angular/forms'
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'ng-learn';
+  title :String = 'ng-learn';
   disable=true
-  twoway : String = "hello"
+   username : String = ""
+  changeInput :String = ""
+  onReset(){
+   this.username = ""
+  }
+
   handleInput(name : string){
     console.log(name)
   }
