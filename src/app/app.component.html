@@ -1,6 +1,7 @@
 <div class="w-full flex justify-center items-center flex-col gap-8 ">
 
   <h2 class="absolute bottom-5 bg-[#1a1a1a] mx-3 text-white dropbox-md select-none p-5 text-center w-[70%] rounded-md">Learning angular</h2>
+<<<<<<< assignment-2
 
 <h1 > {{title}}</h1>
 <!-- <app-header></app-header>  -->
@@ -9,7 +10,7 @@
   -->
   <input placeholder="Inter your text" class="outline-none p-3 border-2 rounded-sm" type="text" [(ngModel)]="username" name="ngmodel" value="ngmodel">
  <!-- <h1>this is by ngmodel : <span>{{twoway}}</span></h1> -->
-  <button class="border-2 bg-gray-200 dropShadow-md rounded-md py-2 px-5" (click)="onReset()">reset</button>
+  <button [disabled]="!username" class="border-2 bg-gray-200 dropShadow-md rounded-md py-2 px-5" (click)="onReset()">reset</button>
   <h1>{{username}}</h1>
 
 <router-outlet />
