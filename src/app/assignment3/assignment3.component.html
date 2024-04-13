@@ -1,11 +1,12 @@
-<div class="flex flex-col" >
-   <button class="bg-[#a9c4f2] my-3 px-3 py-2" (click)="toggleDisplayDetails()">Toggle Display</button>
+<div class="flex flex-col">
+  <button class="bg-[#a9c4f2] my-3 px-3 py-2" (click)="toggleDisplayDetails()">
+    Toggle Display
+  </button>
   @if (!toggleParagraph) {
-  <p class="bg-[#d3d3d3]  my-2">This is Third  Assignment </p>
+  <p class="bg-[#d3d3d3] my-2">This is Third Assignment</p>
+  } @for (item of queue; track item.id; let idx = $index){
+  <div [ngClass]="{ 'bg-blue-700 text-white': idx > 5 }">
+    {{ item.date }} -- {{ idx }}
+  </div>
   }
-
-  @for (item of queue; track item.id; let idx = $index){
-  <div [ngClass]="{idx >= 5 : 'bg-blue-500 text-white'}" >{{item.date}} -- {{idx}}</div>
-  }
-
 </div>
