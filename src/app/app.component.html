@@ -1,7 +1,16 @@
-<div class="w-full flex justify-center items-center flex-col gap-8 ">
+<div class="w-full flex justify-center items-center flex-col py-10 gap-8">
+  <h2
+    class="absolute bottom-5 bg-[#1a1a1a] mx-3 text-white dropbox-md select-none p-5 text-center w-[70%] rounded-md"
+  >
+    Learning angular
+  </h2>
+  <input
+    type="text"
+    #inputVal
+    placeholder="type here"
+    class="px-2 py-3 outline-none border-b-2 rounded-md border-indigo-100"
+  />
 
-  <h2 class="absolute bottom-5 bg-[#1a1a1a] mx-3 text-white dropbox-md select-none p-5 text-center w-[70%] rounded-md">Learning angular</h2>
-
-
-
+  <app-parent (addOne)="onAddOne($event)" (addTwo)="onAddTwo()"></app-parent>
   <router-outlet />
+</div>
