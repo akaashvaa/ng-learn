@@ -1,0 +1,133 @@
+<div class="min-h-screen flex items-center justify-center w-[700px]">
+  <div
+    class="p-8 border-l-4 border-blue-950 rounded-md shadow-md w-full max-w-md"
+  >
+    <div
+      class="flex flex-col text-[2em] font-semibold absolute left-10 top-0 text-center h-full justify-between py-14 font-serif"
+    >
+      <p>R</p>
+      <p>E</p>
+      <p>G</p>
+      <p>I</p>
+      <p>S</p>
+      <p>T</p>
+      <p>E</p>
+      <p>R</p>
+    </div>
+    <form
+      [formGroup]="registerForm"
+      (ngSubmit)="onSubmit()"
+      class="flex flex-col gap-y-4"
+    >
+      <div class="h-20">
+        <label for="name" class="block text-gray-700 text-sm font-bold mb-2"
+          >Full Name</label
+        >
+        <input
+          required
+          type="text"
+          id="username"
+          name="userName"
+          autocomplete="username"
+          formControlName="userName"
+          class="border rounded w-full py-2 px-3 text-gray-700 focus:outline-none"
+          placeholder="Your full name"
+        />
+        @if (registerForm.controls['userName'].invalid &&
+        registerForm.controls['userName'].touched ) {
+        <div class="w-full flex justify-end text-red-500 text-[14px] mt-1">
+          @if (registerForm.controls['userName'].errors) {
+          <p>Name must be at least 3 characters long.</p>
+
+          }
+        </div>
+        }
+      </div>
+      <div class="h-20">
+        <label for="email" class="block text-gray-700 text-sm font-bold mb-2"
+          >Email</label
+        >
+        <input
+          required
+          type="email"
+          id="email"
+          autocomplete="email"
+          name="email"
+          formControlName="email"
+          class="border rounded w-full py-2 px-3 text-gray-700 focus:outline-none"
+          placeholder="Email address"
+        />
+        @if (registerForm.controls['email'].invalid &&
+        registerForm.controls['email'].touched ) {
+        <div class="w-full flex justify-end text-red-500 text-[14px] mt-1">
+          @if (registerForm.controls['email'].errors) {
+          <p>Enter a valid email.</p>
+          }
+        </div>
+        }
+      </div>
+      <div class="h-20">
+        <label for="password" class="block text-gray-700 text-sm font-bold mb-2"
+          >Password</label
+        >
+        <input
+          required
+          type="password"
+          autocomplete="new-password"
+          id="password"
+          name="password"
+          formControlName="password"
+          class="border rounded w-full py-2 px-3 text-gray-700 focus:outline-none"
+          placeholder="Password"
+        />
+        @if (registerForm.controls['password'].invalid &&
+        registerForm.controls['password'].touched ) {
+        <div class="w-full flex justify-end text-red-500 text-[14px] mt-1">
+          @if (registerForm.controls['password'].errors) {
+          <p>Password must be at least 6 characters long.</p>
+          }
+        </div>
+        }
+      </div>
+      <div class="h-20">
+        <label
+          for="confirmPassword"
+          class="block text-gray-700 text-sm font-bold mb-2"
+          >Confirm Password</label
+        >
+        <input
+          required
+          type="password"
+          autocomplete="current-password"
+          id="confirmPassword"
+          name="confirmPassword"
+          formControlName="confirmPassword"
+          class="border rounded w-full py-2 px-3 text-gray-700 focus:outline-none"
+          placeholder="Confirm your password"
+        />
+        @if (registerForm.controls['confirmPassword'].invalid &&
+        registerForm.controls['confirmPassword'].touched ) {
+        <div class="w-full flex justify-end text-red-500 text-[14px] mt-1">
+          @if (registerForm.controls['confirmPassword'].errors?.['mustMatch']) {
+          <p>confirm password should be same as your password</p>
+          }
+        </div>
+        }
+      </div>
+      <div class="flex items-center justify-between">
+        <button
+          class="bg-blue-950 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          type="submit"
+        >
+          Register
+        </button>
+        <a
+          class="inline-block align-baseline underline text-sm text-[#606060] cursor-pointer"
+          routerLink="/auth/login"
+        >
+          Already have an account?
+        </a>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,4 +1,10 @@
-<div class="w-full flex justify-center items-center flex-col py-10 gap-8">
-  <h1>Working</h1>
+<div class="flex relative h-screen w-full justify-center">
+  @if (showNavbar) {
+  <nav class="absolute top-10 flex gap-x-6">
+    <a routerLink="">Home</a>
+    <a routerLink="/shopping">Shopping</a>
+    <a (click)="logout()">Logout</a>
+  </nav>
+  }
   <router-outlet />
 </div>

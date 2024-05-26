@@ -1,0 +1,25 @@
+{
+  "user": [
+    {
+      "id": "1356",
+      "userName": "ahmvaad@gmail.com",
+      "email": "ahmvaad@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456"
+    },
+    {
+      "id": "8cb8",
+      "userName": "vikas",
+      "email": "vikas@gmail.com",
+      "password": "123123",
+      "confirmPassword": "123123"
+    }
+  ],
+  "posts": [
+    {
+      "id": "1",
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ]
+}

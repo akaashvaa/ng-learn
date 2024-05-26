@@ -1,3 +1,13 @@
 h1 {
   color: red;
 }
+a {
+  border-radius: 10px;
+  width: fit-content;
+  cursor: pointer;
+  padding: 10px 20px;
+  text-align: center;
+  a:hover {
+    background: #bebeff5a;
+  }
+}
