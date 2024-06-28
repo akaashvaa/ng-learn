@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, catchError, map, of, switchMap } from 'rxjs';
-import { UserData } from '../user.module';
+import { Observable, of } from 'rxjs';
+import { catchError, map, switchMap } from 'rxjs/operators';
+import { User, UserData } from '../user.module';
 
 @Injectable({
   providedIn: 'root',
@@ -10,33 +11,11 @@ import { UserData } from '../user.module';
 export class AuthService {
   apiUrl = 'http://localhost:3000/user';
   status: boolean = false;
+
   constructor(private http: HttpClient, private router: Router) {}
 
-  // post(userData: UserData): Observable<boolean> {
-  //    this.http.get<UserData[]>(this.apiUrl).subscribe((dataList) => {
-  //     dataList.map((el) => {
-  //       if (el.email == userData.email) {
-  //         alert('email already exist');
-  //         return of(false);
-  //       } else {
-  //         return this.http.post<any>(this.apiUrl, userData).pipe(
-  //           map((response) => {
-  //             sessionStorage.setItem('authToken', 'loggedIn');
-  //             console.log('response', response);
-  //             this.status = true;
-  //           })
-  //         );
-  //       }
-  //     });
-  //   });
-  //   console.log('status', this.status);
-  //   if (this.status) return of(true);
-
-  //   return of(false);
-  // }
-
-  post(userData: UserData): Observable<boolean> {
-    return this.http.get<UserData[]>(this.apiUrl).pipe(
+  post(userData: User): Observable<boolean> {
+    return this.http.get<User[]>(this.apiUrl).pipe(
       switchMap((dataList) => {
         const emailExists = dataList.some((el) => el.email === userData.email);
         if (emailExists) {
@@ -74,14 +53,11 @@ export class AuthService {
     email: string | null,
     password: string | null
   ): Observable<boolean> {
-    // console.log('hit');
-    return this.http.get<UserData[]>(this.apiUrl).pipe(
+    return this.http.get<User[]>(this.apiUrl).pipe(
       map((users) => {
-        // console.log('hit 2');
         const user = users.find((user) => user.email === email);
-        // console.log('user', user);
         if (!user) {
-          alert('email does not exist');
+          alert('Email does not exist');
           return false;
         } else if (user?.password !== password) {
           alert('Incorrect Password');

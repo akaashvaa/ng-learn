@@ -1,0 +1,7 @@
+<div class="flex items-center flex-col gap-y-3 text-white">
+  @for (item of value ; track $index) {
+  <button class="px-5 py-1 bg-violet-500" (click)="handleClick(item)">
+    {{ item.id }}
+  </button>
+  }
+</div>
