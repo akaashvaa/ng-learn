@@ -16,3 +16,12 @@ export class UserListComponent {
     this.clickedItem.emit(item);
   }
 }
+@Component({
+  standalone: true,
+  selector: 'let-see',
+  template:
+    '<h1 class="drop-shadow-lg px-20 py-2 bg-slate-50">two component inside a single file is working</h1>',
+})
+export class LetSee {
+  constructor() {}
+}

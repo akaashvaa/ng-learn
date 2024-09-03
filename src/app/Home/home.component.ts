@@ -34,5 +34,7 @@ export class HomeComponent implements OnInit {
 
   closeAll() {
     this.clickedItem = null;
+    this.showClickedItem = null;
+    // console.log(this.clickedItem);
   }
 }

@@ -2,10 +2,26 @@
   class="flex flex-col justify-center gap-7 items-center p-10 translate-y-56"
 >
   <form (ngSubmit)="onSubmit()" class="flex gap-8">
-    <input type="text" [(ngModel)]="user" name="user" />
-    <input type="text" [(ngModel)]="email" name="email" />
+    <input type="text" [(ngModel)]="user" name="user" class="text-green-600" />
+    <input
+      type="text"
+      [(ngModel)]="email"
+      name="email"
+      class="text-orange-600"
+    />
     <br />
-    <button class="border-2" type="submit">submit</button>
+    <button class="border-2 bg-emerald-900 text-white" type="submit">
+      submit
+    </button>
   </form>
-  <div class="px-12 py-1">{{ user }} | {{ email }}</div>
+  <div class="px-12 py-1 border-b">
+    <span class="text-green-700">
+      {{ user }}
+    </span>
+    |
+    <span class="text-orange-600">
+      {{ email }}
+    </span>
+  </div>
+  <let-see />
 </div>
